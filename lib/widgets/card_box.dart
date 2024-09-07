@@ -34,7 +34,7 @@ class CardBox extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -52,7 +52,7 @@ class CardBox extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             card_num,
             style: const TextStyle(

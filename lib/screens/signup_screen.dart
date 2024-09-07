@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:punch/controller/auth_controller.dart';
+import 'package:punch/main.dart';
 import 'package:punch/widgets/custom_auth_background.dart';
 import 'package:punch/widgets/custom_button.dart';
 import 'package:punch/widgets/custom_text.dart';
@@ -7,11 +8,12 @@ import 'package:punch/widgets/input_form_field.dart';
 
 // ignore: must_be_immutable
 class SignupScreen extends StatelessWidget {
+  SignupScreen({super.key});
+
   GlobalKey<FormState> namestate = GlobalKey();
   GlobalKey<FormState> phonestate = GlobalKey();
   GlobalKey<FormState> emailstate = GlobalKey();
   GlobalKey<FormState> passwordstate = GlobalKey();
-  SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +38,16 @@ class SignupScreen extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 20),
-                Center(
-                  child: CustomText(
-                    text: "Sign up",
-                    fontSize: 24,
-                  ),
+                Row(
+                  children: [
+                    const BackButton(),
+                    const SizedBox(width: 95),
+                    CustomText(
+                      text: "Sign up",
+                      fontSize: 24,
+                      color: Colors.black,
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 50),
 
@@ -81,6 +88,8 @@ class SignupScreen extends StatelessWidget {
                         phonestate.currentState!.validate() &&
                         emailstate.currentState!.validate() &&
                         passwordstate.currentState!.validate()) {
+                      // change 00000 to userId from API
+                      entryController.setUser("00000");
                       Navigator.pushReplacementNamed(
                         context,
                         '/home',

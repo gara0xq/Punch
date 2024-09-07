@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class CustomAuthBackground extends StatelessWidget {
   Widget child;
+
   CustomAuthBackground({super.key, required this.child});
 
   @override

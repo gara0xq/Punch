@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class CustomText extends StatelessWidget {
   String text;
   double fontSize;
-  Color? color = Colors.white;
+  Color color;
   FontWeight fontWeight;
   CustomText({
     super.key,
     required this.text,
     this.fontSize = 14,
-    this.color,
+    this.color = Colors.white,
     this.fontWeight = FontWeight.normal,
   });
 
@@ -19,9 +19,9 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: 14,
+        fontSize: fontSize,
         fontFamily: 'Raleway',
-        color: Color(0xffA31CFF),
+        color: color,
         fontWeight: fontWeight,
       ),
     );

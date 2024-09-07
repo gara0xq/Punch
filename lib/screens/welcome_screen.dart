@@ -5,15 +5,14 @@ import 'package:punch/widgets/welcome_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class WelcomeScreen extends StatefulWidget {
-  WelcomeScreen({Key? key}) : super(key: key);
+  const WelcomeScreen({super.key});
   @override
-  _WelcomeScreenState createState() {
-    return _WelcomeScreenState();
-  }
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   final PageController _controller = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,9 +33,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 360),
+                  SizedBox(
+                    height: 250,
                     child: PageView(
                       controller: _controller,
                       children: [
@@ -58,61 +58,53 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ],
                     ),
                   ),
-                  Container(
-                    alignment: const Alignment(0, 0.3),
-                    child: SmoothPageIndicator(
-                      controller: _controller,
-                      count: 3,
-                      effect: const JumpingDotEffect(),
-                    ),
+                  SmoothPageIndicator(
+                    controller: _controller,
+                    count: 3,
+                    effect: const JumpingDotEffect(),
                   ),
-                  SizedBox(
-                    width: 240,
-                    height: 55,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, "/register");
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 16.0),
-                        backgroundColor: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/register");
+                    },
+                    child: Container(
+                      width: 240,
+                      height: 55,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(30),
                       ),
-                      child: CustomText(
-                        text: 'SIGN UP',
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                      child: Center(
+                        child: CustomText(
+                          text: 'SIGN UP',
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
                   GestureDetector(
-                    child: SizedBox(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
+                        ),
+                      );
+                    },
+                    child: Container(
                       width: 240,
                       height: 55,
-                      child: OutlinedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
-                        },
-                        style: OutlinedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 16.0),
-                          side: const BorderSide(
-                              color: Colors.black,
-                              width: 2.0), // Border color and width
-                          shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(30.0), // Rounded corners
-                          ),
-                        ),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black, width: 2),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Center(
                         child: CustomText(
-                          text: "LOGIN",
-                          color: Colors.black,
+                          text: 'LOGIN',
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
+                          color: Colors.black,
                         ),
                       ),
                     ),
