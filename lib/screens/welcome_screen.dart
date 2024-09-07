@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:punch/screens/login_screen.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/welcome_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -85,12 +84,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
-                        ),
-                      );
+                      Navigator.pushNamed(context, "/login");
                     },
                     child: Container(
                       width: 240,

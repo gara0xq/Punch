@@ -1,6 +1,6 @@
 class AuthController {
   loginController() {}
-  signupController() {}
+  signupController(model) {}
 
   isEmptyValidation(String value) {
     if (value.isEmpty) {
@@ -24,6 +24,15 @@ class AuthController {
       return "Email Should Contain @ ";
     } else if (value.contains('.com')) {
       return "Email Should Contain .com";
+    }
+  }
+
+  //username validation
+  usernameValidation(String value) {
+    if (value.isEmpty) {
+      return "Empty Field";
+    } else if (!value.contains('/')) {
+      return "Email Should Contain / ";
     }
   }
 }

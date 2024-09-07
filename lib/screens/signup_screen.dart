@@ -56,14 +56,21 @@ class SignupScreen extends StatelessWidget {
                   formKey: namestate,
                   validator: (value) =>
                       authController.isEmptyValidation(value!),
-                  labelText: "Full Name",
+                  labelText: "First Name",
                 ),
                 const SizedBox(height: 17),
                 InputFormField(
                   formKey: phonestate,
                   validator: (value) =>
                       authController.isEmptyValidation(value!),
-                  labelText: "Phone Number",
+                  labelText: "Last Name",
+                ),
+                const SizedBox(height: 17),
+                InputFormField(
+                  formKey: emailstate,
+                  validator: (value) =>
+                      authController.usernameValidation(value!),
+                  labelText: "Username",
                 ),
                 const SizedBox(height: 17),
                 InputFormField(
