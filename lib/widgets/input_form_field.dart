@@ -5,11 +5,13 @@ class InputFormField extends StatelessWidget {
   String? Function(String?)? validator;
   GlobalKey formKey;
   String labelText;
+  TextEditingController controller;
   InputFormField({
     super.key,
     required this.formKey,
     required this.validator,
     required this.labelText,
+    required this.controller,
   });
 
   @override
@@ -17,6 +19,7 @@ class InputFormField extends StatelessWidget {
     return Form(
       key: formKey,
       child: TextFormField(
+        controller: controller,
         validator: validator,
         decoration: InputDecoration(
           prefix: const SizedBox(width: 10),

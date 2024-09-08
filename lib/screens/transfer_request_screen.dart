@@ -9,6 +9,10 @@ import 'package:punch/widgets/sub_screens_background.dart';
 class TransferRequestScreen extends StatelessWidget {
   GlobalKey<FormState> transfeAmountState = GlobalKey();
   GlobalKey<FormState> requestAccountState = GlobalKey();
+
+  TextEditingController transfeAmountController = TextEditingController();
+  TextEditingController requestAccountController = TextEditingController();
+
   AuthController _authController = AuthController();
   EntryController _entryController = EntryController();
 
@@ -93,11 +97,14 @@ class TransferRequestScreen extends StatelessWidget {
                           ),
                         ),
                         InputFormField(
-                            formKey: transfeAmountState,
-                            validator: (value) =>
-                                _authController.numberValidation(value!),
-                            labelText: "Amount of Transfer Request"),
+                          controller: transfeAmountController,
+                          formKey: transfeAmountState,
+                          validator: (value) =>
+                              _authController.numberValidation(value!),
+                          labelText: "Amount of Transfer Request",
+                        ),
                         InputFormField(
+                          controller: transfeAmountController,
                           formKey: requestAccountState,
                           validator: (value) =>
                               _authController.numberValidation(value!),

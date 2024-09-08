@@ -17,6 +17,10 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   GlobalKey<FormState> usernamestate = GlobalKey();
   GlobalKey<FormState> passwordstate = GlobalKey();
+
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   bool status = false;
   String? userId;
 
@@ -58,12 +62,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 30),
                 InputFormField(
+                  controller: usernameController,
                   formKey: usernamestate,
                   validator: (value) => authController.emailValidation(value!),
-                  labelText: "Email",
+                  labelText: "Username",
                 ),
                 const SizedBox(height: 5),
                 InputFormField(
+                  controller: passwordController,
                   formKey: passwordstate,
                   validator: (value) =>
                       authController.passwordValidation(value!),
