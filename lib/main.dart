@@ -23,13 +23,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
-        '/': (context) => const SplashScreen(),
+        '/': (context) => HistoryScreen(),
         '/welcome': (context) => const WelcomeScreen(),
         '/login': (context) => const LoginScreen(),
         '/register': (context) => SignupScreen(),
         '/home': (context) => const HomeScreen(),
         '/history': (context) => const HistoryScreen(),
-        '/transfer_request': (context) => const TransferRequestScreen(),
+        '/transfer_request': (context) => TransferRequestScreen(),
       },
     );
   }

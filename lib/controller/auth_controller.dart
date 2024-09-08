@@ -1,6 +1,6 @@
 class AuthController {
   loginController() {}
-  signupController(model) {}
+  signupController() {}
 
   isEmptyValidation(String value) {
     if (value.isEmpty) {
@@ -33,6 +33,12 @@ class AuthController {
       return "Empty Field";
     } else if (!value.contains('/')) {
       return "Email Should Contain / ";
+    }
+  }
+
+  numberValidation(String value) {
+    if (value.contains(new RegExp(r'[a-z]'))) {
+      return "Shouldn't contain letters";
     }
   }
 }
