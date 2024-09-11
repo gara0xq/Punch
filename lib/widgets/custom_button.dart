@@ -8,19 +8,25 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
+    return TextButton(
       onPressed: onPressed,
-      minWidth: double.infinity,
-      color: Colors.black,
-      height: 60,
-      textColor: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontSize: 15,
-          fontFamily: "Raleway",
-          fontWeight: FontWeight.w700,
+      child: Container(
+        height: 60,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontFamily: "Raleway",
+              fontWeight: FontWeight.w700,
+            ),
+          ),
         ),
       ),
     );

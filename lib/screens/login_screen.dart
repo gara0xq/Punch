@@ -1,7 +1,9 @@
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:punch/controller/auth_controller.dart';
-import 'package:punch/main.dart';
-import 'package:punch/screens/home_screen.dart';
+import 'package:punch/controller/prefs_controller.dart';
+import 'package:punch/model/request/login_req_model.dart';
 import 'package:punch/widgets/custom_auth_background.dart';
 import 'package:punch/widgets/custom_button.dart';
 import 'package:punch/widgets/custom_text.dart';
@@ -21,14 +23,13 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  AuthController authController = Get.put(AuthController());
+  PrefsController prefsController = Get.find<PrefsController>();
   bool status = false;
   String? userId;
 
   @override
   Widget build(BuildContext context) {
-    //instance from controller
-    AuthController authController = AuthController();
-
     return Scaffold(
       backgroundColor: const Color(0xFF1F1F24),
       body: CustomAuthBackground(
@@ -64,7 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 InputFormField(
                   controller: usernameController,
                   formKey: usernamestate,
-                  validator: (value) => authController.emailValidation(value!),
+                  validator: (value) =>
+                      authController.usernameValidation(value!),
                   labelText: "Username",
                 ),
                 const SizedBox(height: 5),
@@ -125,17 +127,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 CustomButton(
                   text: "Login",
-                  onPressed: () {
+                  onPressed: () async {
                     if (usernamestate.currentState!.validate() &&
                         passwordstate.currentState!.validate()) {
-                      // change 00000 to userId from API
-                      entryController.setUser("00000");
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
+                      await authController.loginController(
+                        LoginReqModel(
+                          username: usernameController.text,
+                          password: passwordController.text,
                         ),
                       );
+                      userId = authController.loginResponse.data.userAccountId;
+                      prefsController.setUser(userId!);
+                      Get.offAllNamed('/home');
                     }
                   },
                 )

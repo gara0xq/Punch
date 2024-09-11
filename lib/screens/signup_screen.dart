@@ -1,10 +1,11 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:punch/controller/auth_controller.dart';
+import 'package:punch/controller/prefs_controller.dart';
 import 'package:punch/main.dart';
+import 'package:punch/model/request/signup_req_model.dart';
 import 'package:punch/widgets/custom_auth_background.dart';
 import 'package:punch/widgets/custom_button.dart';
 import 'package:punch/widgets/custom_text.dart';
@@ -26,11 +27,13 @@ class SignupScreen extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
+  AuthController authController = Get.put(AuthController());
+  PrefsController prefsController = Get.find<PrefsController>();
+
+  String? userId;
+
   @override
   Widget build(BuildContext context) {
-    //instance from controller
-    AuthController authController = AuthController();
-
     return Scaffold(
       backgroundColor: const Color(0xFF1F1F24),
 
@@ -108,17 +111,24 @@ class SignupScreen extends StatelessWidget {
                   //custom button
                   CustomButton(
                     text: "CREATE ACCOUNT",
-                    onPressed: () {
-                      log(usernameController.text);
+                    onPressed: () async {
                       if (usernamestate.currentState!.validate() &&
                           emailstate.currentState!.validate() &&
                           passwordstate.currentState!.validate()) {
-                        // change 00000 to userId from API
-                        entryController.setUser("00000");
-                        Navigator.pushReplacementNamed(
-                          context,
-                          '/home',
+                        await authController.signupController(
+                          SignupReqModel(
+                            username: usernameController.text,
+                            password: passwordController.text,
+                            firstname: firstnameController.text,
+                            lastname: lastnameController.text,
+                            email: emailController.text,
+                            language: "en",
+                          ),
                         );
+                        userId =
+                            authController.signupResponse.data.userAccountId;
+                        entryController.setUser(userId!);
+                        Get.offAllNamed('/home');
                       }
                     },
                   ),

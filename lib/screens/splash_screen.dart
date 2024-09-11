@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:punch/main.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,10 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(const Duration(seconds: 3), () {
       String? user = entryController.getUser();
-
-      user == null
-          ? Navigator.pushReplacementNamed(context, "/welcome")
-          : Navigator.pushReplacementNamed(context, "/login");
+      user == null ? Get.offAllNamed("/welcome") : Get.offAllNamed("/home");
     });
   }
 

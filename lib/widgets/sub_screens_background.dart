@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:punch/utils/colors.dart';
 
+// ignore: must_be_immutable
 class SubScreensBackground extends StatelessWidget {
   Widget child;
   SubScreensBackground({super.key, required this.child});
