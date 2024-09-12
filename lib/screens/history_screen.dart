@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:punch/controller/home_controller.dart';
 import 'package:punch/controller/user_payments.dart';
 import 'package:punch/utils/colors.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/sub_screens_background.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 // ignore: must_be_immutable
 class HistoryScreen extends StatelessWidget {
@@ -30,7 +31,7 @@ class HistoryScreen extends StatelessWidget {
                     SizedBox(height: 40),
                     Center(
                       child: CustomText(
-                        text: "History",
+                        text: "history".tr(),
                         color: Colors.black,
                         fontSize: 20,
                       ),
@@ -56,7 +57,7 @@ class HistoryScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           CustomText(
-                            text: "Date",
+                            text: "date".tr(),
                             color: Colors.black,
                           ),
                           Row(
@@ -67,7 +68,7 @@ class HistoryScreen extends StatelessWidget {
                               ),
                               SizedBox(width: 5),
                               CustomText(
-                                text: "May",
+                                text: "may".tr(),
                                 color: Colors.black,
                                 fontSize: 18,
                               )
@@ -103,7 +104,7 @@ class HistoryScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomText(
-                                    text: "Intcome",
+                                    text: "income".tr(),
                                     fontSize: 18,
                                   ),
                                   Image.asset('assets/icons/inArrow.png',
@@ -142,7 +143,7 @@ class HistoryScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomText(
-                                    text: "Outcome",
+                                    text: "outcome".tr(),
                                     fontSize: 18,
                                   ),
                                   Image.asset('assets/icons/outArrow.png',

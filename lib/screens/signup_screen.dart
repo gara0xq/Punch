@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:punch/controller/auth_controller.dart';
 import 'package:punch/controller/prefs_controller.dart';
 import 'package:punch/main.dart';
@@ -10,6 +10,7 @@ import 'package:punch/widgets/custom_auth_background.dart';
 import 'package:punch/widgets/custom_button.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/input_form_field.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 // ignore: must_be_immutable
 class SignupScreen extends StatelessWidget {
@@ -58,7 +59,7 @@ class SignupScreen extends StatelessWidget {
                       const BackButton(),
                       const SizedBox(width: 95),
                       CustomText(
-                        text: "Sign up",
+                        text: 'sign_up'.tr(),
                         fontSize: 24,
                         color: Colors.black,
                       ),
@@ -72,7 +73,7 @@ class SignupScreen extends StatelessWidget {
                     formKey: firstnamestate,
                     validator: (value) =>
                         authController.isEmptyValidation(value!),
-                    labelText: "First Name",
+                    labelText: "first_name".tr(),
                   ),
                   const SizedBox(height: 17),
                   InputFormField(
@@ -80,7 +81,7 @@ class SignupScreen extends StatelessWidget {
                     formKey: lastnamestate,
                     validator: (value) =>
                         authController.isEmptyValidation(value!),
-                    labelText: "Last Name",
+                    labelText: "last_name".tr(),
                   ),
                   const SizedBox(height: 17),
                   InputFormField(
@@ -88,7 +89,7 @@ class SignupScreen extends StatelessWidget {
                     formKey: usernamestate,
                     validator: (value) =>
                         authController.usernameValidation(value!),
-                    labelText: "Username",
+                    labelText: "username".tr(),
                   ),
                   const SizedBox(height: 17),
                   InputFormField(
@@ -96,7 +97,7 @@ class SignupScreen extends StatelessWidget {
                     formKey: emailstate,
                     validator: (value) =>
                         authController.emailValidation(value!),
-                    labelText: "Email",
+                    labelText: "email".tr(),
                   ),
                   const SizedBox(height: 17),
                   InputFormField(
@@ -104,13 +105,13 @@ class SignupScreen extends StatelessWidget {
                     formKey: passwordstate,
                     validator: (value) =>
                         authController.passwordValidation(value!),
-                    labelText: "Password",
+                    labelText: "password".tr(),
                   ),
                   const SizedBox(height: 20),
 
                   //custom button
                   CustomButton(
-                    text: "CREATE ACCOUNT",
+                    text: "create_account".tr(),
                     onPressed: () async {
                       if (usernamestate.currentState!.validate() &&
                           emailstate.currentState!.validate() &&
