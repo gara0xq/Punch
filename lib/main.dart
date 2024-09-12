@@ -19,7 +19,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  //eesssssssssssssssssssssssssssssss
+  //1
   @override
   Widget build(BuildContext context) {
     entryController.loadPreferences();
