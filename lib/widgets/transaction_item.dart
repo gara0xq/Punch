@@ -34,12 +34,12 @@ class TransactionItem extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 4),
+                SizedBox(height: 4),
                 Text(
                   status,
                   style: TextStyle(
@@ -54,14 +54,14 @@ class TransactionItem extends StatelessWidget {
             children: [
               Text(
                 amount,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
                 ),
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4),
               Text(
                 date,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 12,
                   color: Colors.grey,
                 ),

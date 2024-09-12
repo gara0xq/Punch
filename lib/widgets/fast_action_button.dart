@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class FastActionButton extends StatelessWidget {
   Color color;
   String title, image;
@@ -25,10 +24,10 @@ class FastActionButton extends StatelessWidget {
           ),
           child: Image.asset(image),
         ),
-        const SizedBox(height: 10),
+        SizedBox(height: 10),
         Text(
           title,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 14,
             fontFamily: "Raleway",
           ),

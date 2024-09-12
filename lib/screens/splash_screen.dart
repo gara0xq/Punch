@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:punch/main.dart';
+import 'package:flutter/services.dart';
+import 'package:punch/screens/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -9,30 +9,35 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
-  String? userId;
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 3), () {
-      String? user = entryController.getUser();
-      user == null
-          ? Get.offAllNamed("/welcome")
-          : Get.offAllNamed("/controller");
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => WelcomeScreen()));
     });
+    void dispose() {
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+          overlays: SystemUiOverlay.values);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
+      body: Container(
         width: double.infinity,
-        child: Center(
-          child: Image.asset(
-            'assets/images/Splash Screen.png',
-            fit: BoxFit.cover,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/Splash Screen.png',
+              fit: BoxFit.cover,
+            ),
+          ],
         ),
       ),
     );
