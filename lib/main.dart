@@ -12,14 +12,14 @@ import 'package:punch/screens/transfer_request_screen.dart';
 import 'package:punch/screens/welcome_screen.dart';
 
 PrefsController entryController = PrefsController();
-//main
+
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  //as
   @override
   Widget build(BuildContext context) {
     entryController.loadPreferences();
