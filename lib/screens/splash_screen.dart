@@ -17,7 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(const Duration(seconds: 3), () {
       String? user = entryController.getUser();
-      user == null ? Get.offAllNamed("/welcome") : Get.offAllNamed("/home");
+      user == null
+          ? Get.offAllNamed("/welcome")
+          : Get.offAllNamed("/controller");
     });
   }
 

@@ -33,8 +33,8 @@ class UserPaymentsController extends GetxController {
       for (Map<String, dynamic> index in data) {
         userPaymets.add(UserPaymentModel.fromJson(index));
       }
-      return userPaymets;
+      return userPaymets.reversed.toList();
     }
-    return userPaymets;
+    return userPaymets.reversed.toList();
   }
 }

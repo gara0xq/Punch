@@ -12,6 +12,7 @@ class HomeController extends GetxController {
   ValueNotifier<bool> get loading => _loading;
 
   PrefsController prefsController = Get.find<PrefsController>();
+
   List<GetUsersModel> _usersData = [];
   late GetUsersModel CurrentUserModel;
   late GetUsersModel userModel;

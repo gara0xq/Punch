@@ -37,12 +37,12 @@ class SubScreensBackground extends StatelessWidget {
         Container(
           height: 45,
           width: 45,
-          margin: EdgeInsets.only(top: 30, left: 15),
-          decoration: BoxDecoration(
+          margin: const EdgeInsets.only(top: 30, left: 15),
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: blue,
           ),
-          child: BackButton(
+          child: const BackButton(
             color: Colors.white,
           ),
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:punch/binding.dart';
 import 'package:punch/controller/prefs_controller.dart';
+import 'package:punch/screens/controller_screen.dart';
 import 'package:punch/screens/history_screen.dart';
 import 'package:punch/screens/home_screen.dart';
 import 'package:punch/screens/login_screen.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       getPages: [
         GetPage(name: '/', page: () => const SplashScreen()),
+        GetPage(name: '/controller', page: () => ControllerScreen()),
         GetPage(name: '/welcome', page: () => const WelcomeScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
         GetPage(name: '/register', page: () => SignupScreen()),
