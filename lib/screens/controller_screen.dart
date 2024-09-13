@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:punch/controller/bottom_nav_controller.dart';
 import 'package:punch/utils/colors.dart';
 import 'package:punch/widgets/custom_text.dart';
@@ -69,7 +70,7 @@ class ControllerScreen extends StatelessWidget {
                                   color: Colors.black,
                                 ),
                                 CustomText(
-                                  text: "Home",
+                                  text: "home".tr,
                                   fontSize: 14,
                                   color: Colors.black,
                                 )
@@ -93,7 +94,7 @@ class ControllerScreen extends StatelessWidget {
                                   scale: 1.3,
                                 ),
                                 CustomText(
-                                  text: "Profile",
+                                  text: "profile".tr,
                                   fontSize: 14,
                                   color: Colors.black,
                                 )

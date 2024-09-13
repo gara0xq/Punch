@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:punch/controller/auth_controller.dart';
 import 'package:punch/controller/home_controller.dart';
 import 'package:punch/controller/prefs_controller.dart';
@@ -49,14 +50,14 @@ class TransferRequestScreen extends StatelessWidget {
                               SizedBox(height: 40),
                               Center(
                                 child: CustomText(
-                                  text: "Transfer Request",
+                                  text: "transfer_request".tr,
                                   color: Colors.black,
                                   fontSize: 20,
                                 ),
                               ),
                               SizedBox(height: 70),
                               CustomText(
-                                text: "Available Balance",
+                                text: "available_balance".tr,
                                 color: Colors.grey.shade600,
                                 fontSize: 18,
                               ),
@@ -67,8 +68,7 @@ class TransferRequestScreen extends StatelessWidget {
                               ),
                               SizedBox(height: 30),
                               CustomText(
-                                text:
-                                    "Pleaser enter the receiver's bank account\nnumber or phone number with the amount of\ntransfer request in below field.",
+                                text: "please".tr,
                                 color: Colors.grey.shade600,
                               ),
                               SizedBox(height: 30),
@@ -119,14 +119,14 @@ class TransferRequestScreen extends StatelessWidget {
                                       formKey: transfeAmountState,
                                       validator: (value) => _authController
                                           .numberValidation(value!),
-                                      labelText: "Amount of Transfer Request",
+                                      labelText: "amount_transfer".tr,
                                     ),
                                     InputFormField(
                                       controller: requestAccountController,
                                       formKey: requestAccountState,
                                       validator: (value) => _authController
                                           .numberValidation(value!),
-                                      labelText: "Requestee’s Account No.",
+                                      labelText: "requestee_account".tr,
                                     ),
                                     GestureDetector(
                                       onTap: () async {
@@ -146,8 +146,8 @@ class TransferRequestScreen extends StatelessWidget {
                                             .loading.value) {
                                           Get.toNamed("/home");
                                           Get.snackbar(
-                                            "Congrates",
-                                            "Transfer Done Successfully",
+                                            "congrates".tr,
+                                            "done".tr,
                                             backgroundColor: Colors.white,
                                             boxShadows: [
                                               BoxShadow(
@@ -172,7 +172,7 @@ class TransferRequestScreen extends StatelessWidget {
                                         ),
                                         child: Center(
                                           child: CustomText(
-                                            text: "Send",
+                                            text: "send".tr,
                                             fontSize: 22,
                                           ),
                                         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/welcome_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -40,18 +41,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       controller: _controller,
                       children: [
                         WelcomeWidget(
-                          text:
-                              'Organize, find, and enjoy your\nloyalty cards in a more modern\nand dynamic way',
+                          text: 'welcome1'.tr,
                           image: 'assets/icons/Icon1.png',
                         ),
                         WelcomeWidget(
-                          text:
-                              'Your money, your control smart\nbank with lower fees!',
+                          text: 'welcome2'.tr,
                           image: 'assets/icons/Icon2.png',
                         ),
                         WelcomeWidget(
-                          text:
-                              'Lock it down, bank with confidence\n Your security, our commitment.',
+                          text: 'welcome3'.tr,
                           image: 'assets/icons/Icon3.png',
                         ),
                       ],
@@ -75,7 +73,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                       child: Center(
                         child: CustomText(
-                          text: 'SIGN UP',
+                          text: 'sign_up'.tr,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -95,7 +93,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                       child: Center(
                         child: CustomText(
-                          text: 'LOGIN',
+                          text: 'log_in'.tr,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
