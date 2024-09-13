@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:get/get.dart' hide Trans;
+import 'package:get/get.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:punch/controller/auth_controller.dart';
 import 'package:punch/controller/prefs_controller.dart';
 import 'package:punch/model/request/login_req_model.dart';
@@ -8,7 +8,6 @@ import 'package:punch/widgets/custom_auth_background.dart';
 import 'package:punch/widgets/custom_button.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/input_form_field.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -56,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         : const SizedBox(width: 60),
                     const SizedBox(width: 95),
                     CustomText(
-                      text: "log_in".tr(),
+                      text: "log_in".tr,
                       fontSize: 24,
                       color: Colors.black,
                     ),
@@ -68,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   formKey: usernamestate,
                   validator: (value) =>
                       authController.usernameValidation(value!),
-                  labelText: "username".tr(),
+                  labelText: "username".tr,
                 ),
                 const SizedBox(height: 5),
                 InputFormField(
@@ -76,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   formKey: passwordstate,
                   validator: (value) =>
                       authController.passwordValidation(value!),
-                  labelText: "password".tr(),
+                  labelText: "password".tr,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,13 +90,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               });
                             }),
                         CustomText(
-                          text: "remember_me".tr(),
+                          text: "remember_me".tr,
                           color: Colors.black,
                         ),
                       ],
                     ),
                     CustomText(
-                      text: "forgot_password".tr(),
+                      text: "forgot_password".tr,
                       color: const Color(0xff1C7997),
                     ),
                   ],
@@ -105,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Row(
                   children: [
                     CustomText(
-                      text: "not_memeber".tr(),
+                      text: "not_memeber".tr,
                       color: Colors.black,
                     ),
                     const SizedBox(width: 5),
@@ -117,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         );
                       },
                       child: CustomText(
-                        text: "create_account".tr(),
+                        text: "create_account".tr,
                         color: const Color(0xffA31CFF),
                       ),
                     )
@@ -127,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 20,
                 ),
                 CustomButton(
-                  text: "log_in".tr(),
+                  text: "log_in".tr,
                   onPressed: () async {
                     if (usernamestate.currentState!.validate() &&
                         passwordstate.currentState!.validate()) {

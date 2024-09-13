@@ -1,8 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:punch/binding.dart';
 import 'package:punch/controller/prefs_controller.dart';
+import 'package:punch/locale/my_locale.dart';
 import 'package:punch/screens/controller_screen.dart';
 import 'package:punch/screens/history_screen.dart';
 import 'package:punch/screens/home_screen.dart';
@@ -14,18 +14,8 @@ import 'package:punch/screens/welcome_screen.dart';
 
 PrefsController entryController = PrefsController();
 
-void main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
-
-  runApp(
-     EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('ar')],
-      path: 'assets/translations',
-      startLocale: Locale('ar'), //App Starts with Arabic
-      child: MyApp()
-    ),
-  );
+void main() async {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -35,9 +25,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     entryController.loadPreferences();
     return GetMaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
+      locale: Get.deviceLocale,
+      translations: MyLocale(),
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
       initialRoute: "/",

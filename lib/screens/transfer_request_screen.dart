@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart' hide Trans;
+import 'package:get/get.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:punch/controller/auth_controller.dart';
 import 'package:punch/controller/home_controller.dart';
 import 'package:punch/controller/prefs_controller.dart';
@@ -9,7 +10,6 @@ import 'package:punch/utils/colors.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/input_form_field.dart';
 import 'package:punch/widgets/sub_screens_background.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 // ignore: must_be_immutable
 class TransferRequestScreen extends StatelessWidget {
@@ -50,14 +50,14 @@ class TransferRequestScreen extends StatelessWidget {
                               SizedBox(height: 40),
                               Center(
                                 child: CustomText(
-                                  text: "transfer_request".tr(),
+                                  text: "transfer_request".tr,
                                   color: Colors.black,
                                   fontSize: 20,
                                 ),
                               ),
                               SizedBox(height: 70),
                               CustomText(
-                                text: "available_balance".tr(),
+                                text: "available_balance".tr,
                                 color: Colors.grey.shade600,
                                 fontSize: 18,
                               ),
@@ -68,8 +68,7 @@ class TransferRequestScreen extends StatelessWidget {
                               ),
                               SizedBox(height: 30),
                               CustomText(
-                                text:
-                                    "please".tr(),
+                                text: "please".tr,
                                 color: Colors.grey.shade600,
                               ),
                               SizedBox(height: 30),
@@ -120,14 +119,14 @@ class TransferRequestScreen extends StatelessWidget {
                                       formKey: transfeAmountState,
                                       validator: (value) => _authController
                                           .numberValidation(value!),
-                                      labelText: "amount_transfer".tr(),
+                                      labelText: "amount_transfer".tr,
                                     ),
                                     InputFormField(
                                       controller: requestAccountController,
                                       formKey: requestAccountState,
                                       validator: (value) => _authController
                                           .numberValidation(value!),
-                                      labelText: "requestee_account".tr(),
+                                      labelText: "requestee_account".tr,
                                     ),
                                     GestureDetector(
                                       onTap: () async {
@@ -147,8 +146,8 @@ class TransferRequestScreen extends StatelessWidget {
                                             .loading.value) {
                                           Get.toNamed("/home");
                                           Get.snackbar(
-                                            "congrates".tr(),
-                                            "done".tr(),
+                                            "congrates".tr,
+                                            "done".tr,
                                             backgroundColor: Colors.white,
                                             boxShadows: [
                                               BoxShadow(
@@ -173,7 +172,7 @@ class TransferRequestScreen extends StatelessWidget {
                                         ),
                                         child: Center(
                                           child: CustomText(
-                                            text: "send".tr(),
+                                            text: "send".tr,
                                             fontSize: 22,
                                           ),
                                         ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart' hide Trans;
+import 'package:get/get.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:punch/controller/bottom_nav_controller.dart';
 import 'package:punch/utils/colors.dart';
 import 'package:punch/widgets/custom_text.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 class ControllerScreen extends StatelessWidget {
   ControllerScreen({super.key});
@@ -70,7 +70,7 @@ class ControllerScreen extends StatelessWidget {
                                   color: Colors.black,
                                 ),
                                 CustomText(
-                                  text: "home".tr(),
+                                  text: "home".tr,
                                   fontSize: 14,
                                   color: Colors.black,
                                 )
@@ -94,7 +94,7 @@ class ControllerScreen extends StatelessWidget {
                                   scale: 1.3,
                                 ),
                                 CustomText(
-                                  text: "profile".tr(),
+                                  text: "profile".tr,
                                   fontSize: 14,
                                   color: Colors.black,
                                 )

@@ -1,14 +1,11 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 //Change Language Method
 
-class LocalController {
-  changeLang(BuildContext context, Locale local) {
-    if (EasyLocalization.of(context)!.locale == Locale("en")) {
-      EasyLocalization.of(context)!.setLocale(Locale("ar"));
-    }else{
-      EasyLocalization.of(context)!.setLocale(Locale("en"));
-    }
+class LocalController extends GetxController {
+  void changeLang(String langCode) {
+    Locale locale = Locale(langCode);
+    Get.updateLocale(locale);
   }
 }

@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/welcome_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -41,18 +41,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       controller: _controller,
                       children: [
                         WelcomeWidget(
-                          text:
-                              'welcome1'.tr(),
+                          text: 'welcome1'.tr,
                           image: 'assets/icons/Icon1.png',
                         ),
                         WelcomeWidget(
-                          text:
-                              'welcome2'.tr(),
+                          text: 'welcome2'.tr,
                           image: 'assets/icons/Icon2.png',
                         ),
                         WelcomeWidget(
-                          text:
-                              'welcome3'.tr(),
+                          text: 'welcome3'.tr,
                           image: 'assets/icons/Icon3.png',
                         ),
                       ],
@@ -76,7 +73,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                       child: Center(
                         child: CustomText(
-                          text: 'sign_up'.tr(),
+                          text: 'sign_up'.tr,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -96,7 +93,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                       child: Center(
                         child: CustomText(
-                          text: 'log_in'.tr(),
+                          text: 'log_in'.tr,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,

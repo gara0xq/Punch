@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart' hide Trans;
+import 'package:get/get.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:punch/widgets/apps_box.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 class AppsScreen extends StatelessWidget {
   const AppsScreen({super.key});
@@ -22,7 +22,7 @@ class AppsScreen extends StatelessWidget {
                   children: [
                     AppsBox(
                       image: 'assets/icons/transaction.png',
-                      title: "transfer".tr(),
+                      title: "transfer".tr,
                       onPressed: () {
                         Get.toNamed('/transfer_request');
                       },
@@ -30,7 +30,7 @@ class AppsScreen extends StatelessWidget {
                     AppsBox(
                       image: 'assets/icons/add.png',
                       scale: 0.6,
-                      title: "add_money".tr(),
+                      title: "add_money".tr,
                     ),
                   ],
                 ),
@@ -40,7 +40,7 @@ class AppsScreen extends StatelessWidget {
                     AppsBox(
                       image: 'assets/icons/list.png',
                       scale: 1.5,
-                      title: "transactions".tr(),
+                      title: "transactions".tr,
                       onPressed: () {
                         Get.toNamed('/history');
                       },
@@ -48,7 +48,7 @@ class AppsScreen extends StatelessWidget {
                     AppsBox(
                       image: 'assets/icons/bills.png',
                       scale: 1.3,
-                      title: "pay_bills".tr(),
+                      title: "pay_bills".tr,
                     ),
                   ],
                 ),
@@ -58,13 +58,12 @@ class AppsScreen extends StatelessWidget {
                     AppsBox(
                       image: 'assets/icons/mycards.png',
                       scale: 1.2,
-                      title: "my_cards".tr(),
+                      title: "my_cards".tr,
                     ),
                     AppsBox(
                       image: 'assets/icons/offers.png',
                       scale: 1.2,
-                      title: "offers".tr(),
-                      
+                      title: "offers".tr,
                     ),
                   ],
                 ),

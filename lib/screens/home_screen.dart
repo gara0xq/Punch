@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart' hide Trans;
+import 'package:get/get.dart';
 import 'package:punch/controller/home_controller.dart';
 import 'package:punch/controller/prefs_controller.dart';
 import 'package:punch/utils/colors.dart';
@@ -7,8 +7,6 @@ import 'package:punch/widgets/card_box.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/fast_action_button.dart';
 import 'package:punch/widgets/transaction_item.dart';
-import 'package:easy_localization/easy_localization.dart';
-
 
 // ignore: must_be_immutable
 class HomeScreen extends GetWidget<HomeController> {
@@ -59,7 +57,7 @@ class HomeScreen extends GetWidget<HomeController> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 CustomText(
-                                  text: 'home'.tr(),
+                                  text: 'home'.tr,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -75,7 +73,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                         size: 20),
                                     const SizedBox(width: 5),
                                     CustomText(
-                                      text: 'current_balance'.tr(),
+                                      text: 'current_balance'.tr,
                                       fontSize: 16,
                                       color: Colors.black,
                                     ),
@@ -89,7 +87,7 @@ class HomeScreen extends GetWidget<HomeController> {
                               children: [
                                 FastActionButton(
                                   color: const Color(0xFF4C52EE),
-                                  title: "add_money".tr(),
+                                  title: "add_money".tr,
                                   image: "assets/icons/add.png",
                                 ),
                                 GestureDetector(
@@ -98,13 +96,13 @@ class HomeScreen extends GetWidget<HomeController> {
                                   },
                                   child: FastActionButton(
                                     color: Color.fromARGB(255, 92, 109, 114),
-                                    title: "transfer".tr(),
+                                    title: "transfer".tr,
                                     image: "assets/icons/transaction.png",
                                   ),
                                 ),
                                 FastActionButton(
                                   color: Colors.white,
-                                  title: "pay_bills".tr(),
+                                  title: "pay_bills".tr,
                                   image: "assets/icons/bill.png",
                                 ),
                               ],
@@ -131,13 +129,13 @@ class HomeScreen extends GetWidget<HomeController> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       CustomText(
-                                        text: "my_cards".tr(),
+                                        text: "my_cards".tr,
                                         color: Colors.black,
                                         fontSize: 20,
                                       ),
                                       CustomText(
                                         // text: "See More >",
-                                        text: "${"see_more".tr()} >",
+                                        text: "${"see_more".tr} >",
                                         color: const Color(0xFF1B8CB0),
                                         fontSize: 14,
                                       ),
@@ -196,7 +194,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       CustomText(
-                                        text: "transactions".tr(),
+                                        text: "transactions".tr,
                                         color: Colors.black,
                                         fontSize: 20,
                                       ),
@@ -205,7 +203,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                           Get.toNamed("/history");
                                         },
                                         child: CustomText(
-                                          text: "${"see_more".tr()} >",
+                                          text: "${"see_more".tr} >",
                                           color: const Color(0xFF1B8CB0),
                                           fontSize: 14,
                                         ),
@@ -215,25 +213,25 @@ class HomeScreen extends GetWidget<HomeController> {
                                   TransactionItem(
                                     icon: const Icon(Icons.discord),
                                     title: 'Discord',
-                                    status: "failed".tr(),
+                                    status: "failed".tr,
                                     amount: 'USD 20.00',
-                                    date: "date1".tr(),//"November 25, 2023"
+                                    date: "date1".tr, //"November 25, 2023"
                                     backgroundColor: Colors.purple[100]!,
                                   ),
                                   TransactionItem(
                                     icon: const Icon(Icons.email),
                                     title: 'Gmail',
-                                    status: "completed".tr(),
+                                    status: "completed".tr,
                                     amount: 'USD 86.00',
-                                    date: "date2".tr(),//"October 18, 2023"
+                                    date: "date2".tr, //"October 18, 2023"
                                     backgroundColor: Colors.purple[100]!,
                                   ),
                                   TransactionItem(
                                     icon: const Icon(Icons.facebook),
                                     title: 'Facebook',
-                                    status: "completed".tr(),
+                                    status: "completed".tr,
                                     amount: 'EGP 3500.00',
-                                    date: "date3".tr(),//"April 21, 2023"
+                                    date: "date3".tr, //"April 21, 2023"
                                     backgroundColor: Colors.purple[100]!,
                                   ),
                                 ],
