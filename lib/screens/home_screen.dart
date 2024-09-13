@@ -7,6 +7,7 @@ import 'package:punch/widgets/card_box.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/fast_action_button.dart';
 import 'package:punch/widgets/transaction_item.dart';
+import 'side_bar.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends GetWidget<HomeController> {
@@ -107,6 +108,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                 ),
                               ],
                             ),
+                            //d
                             const SizedBox(height: 20),
                             Container(
                               width: width,
