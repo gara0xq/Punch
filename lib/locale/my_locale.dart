@@ -1,0 +1,102 @@
+import 'package:get/get.dart';
+
+class MyLocale implements Translations {
+  @override
+  // TODO: implement keys
+  Map<String, Map<String, String>> get keys => {
+        "ar": {
+          "sign_up": "إنشاء حساب",
+          "log_in": "تسجيل الدخول",
+          "welcome1":
+              "نظم، وابحث، واستمتع ببطاقات الائتمان\n الخاصة بك بطريقة\n أكثر حداثة وديناميكية",
+          "welcome2": "أموالك، تحكمك،\n بنك ذكي بأقل رسوم!",
+          "welcome3":
+              "قم بإغلاقه، وقم بالمعاملة المصرفية بثقة،\n أمانك هو التزامنا",
+          "create_account": "أنشئ حساب",
+          "first_name": "الاسم الأول",
+          "last_name": "الاسم الأخير",
+          "username": "اسم المستخدم",
+          "email": "البريد الإلكتروني",
+          "password": "كلمة المرور",
+          "remember_me": "تذكرني",
+          "forgot_password": "هل نسيت كلمة المرور؟",
+          "not_memeber": "لست عضواً؟",
+          "home": "الصفحة الرئيسية",
+          "current_balance": "الرصيد الحالي",
+          "add_money": "إضافة المال",
+          "transfer": "تحويل",
+          "pay_bills": "دفع الفواتير",
+          "my_cards": "بطاقاتي",
+          "see_more": "المزيد",
+          "transactions": "المعاملات",
+          "failed": "فشل",
+          "completed": "مكتمل",
+          "profile": "الملف الشخصي",
+          "date1": "٢٥ نوفمبر ٢٠٢٣",
+          "date2": "١٨ أكتوبر ٢٠٢٣",
+          "date3": "٢١ أبريل ٢٠٢٣",
+          "transfer_request": "طلب تحويل",
+          "available_balance": "الرصيد المتاح",
+          "please":
+              "يرجى إدخال رقم حساب المستلم البنكي أو \n رقم الهاتف مع مبلغ طلب التحويل في الحقل أدناه",
+          "amount_transfer": "مبلغ طلب التحويل",
+          "requestee_account": "رقم حساب المستلم",
+          "congrates": "تهانينا",
+          "done": "تم التحويل بنجاح",
+          "send": "إرسال",
+          "history": "سجل المعاملات",
+          "date": "التاريخ",
+          "may": "مايو",
+          "income": "الإيرادات",
+          "outcome": "النفقات",
+          "offers": "العروض"
+        },
+        "en": {
+          "sign_up": "SIGN UP",
+          "log_in": "LOGIN",
+          "welcome1":
+              "Organize, find, and enjoy your\nloyalty cards in a more modern\nand dynamic way",
+          "welcome2": "Your money, your control smart\nbank with lower fees!",
+          "welcome3":
+              "Lock it down, bank with confidence\n Your security, our commitment.",
+          "create_account": "CREATE ACCOUNT",
+          "first_name": "First Name",
+          "last_name": "Last Name",
+          "username": "Username",
+          "email": "Email",
+          "password": "Password",
+          "remember_me": "Remember Me",
+          "forgot_password": "Forgot Password?",
+          "not_memeber": "Not a member?",
+          "home": "Home",
+          "current_balance": "Current Balance",
+          "add_money": "Add Money",
+          "transfer": "Transfer",
+          "pay_bills": "Pay Bills",
+          "my_cards": "My Cards",
+          "see_more": "See More",
+          "transactions": "Transactions",
+          "failed": "Failed",
+          "completed": "Completed",
+          "profile": "Profile",
+          "date1": "November 25, 2023",
+          "date2": "October 18, 2023",
+          "date3": "April 21, 2023",
+          "transfer_request": "Transfer Request",
+          "available_balance": "Available Balance",
+          "please":
+              "Please enter the receiver's bank account\nnumber or phone number with the amount of\ntransfer request in below field.",
+          "amount_transfer": "Amount of Transfer Request",
+          "requestee_account": "Requestee's Account No.",
+          "congrates": "Congrates",
+          "done": "Transfer Done Successfully",
+          "send": "Send",
+          "history": "Transactions History",
+          "date": "Date",
+          "may": "May",
+          "income": "Income",
+          "outcome": "Outcome",
+          "offers": "Offers"
+        }
+      };
+}

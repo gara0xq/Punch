@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:punch/widgets/apps_box.dart';
 
 class AppsScreen extends StatelessWidget {
@@ -21,7 +22,7 @@ class AppsScreen extends StatelessWidget {
                   children: [
                     AppsBox(
                       image: 'assets/icons/transaction.png',
-                      title: "Transfer",
+                      title: "transfer".tr,
                       onPressed: () {
                         Get.toNamed('/transfer_request');
                       },
@@ -29,7 +30,7 @@ class AppsScreen extends StatelessWidget {
                     AppsBox(
                       image: 'assets/icons/add.png',
                       scale: 0.6,
-                      title: "Add Money",
+                      title: "add_money".tr,
                     ),
                   ],
                 ),
@@ -39,7 +40,7 @@ class AppsScreen extends StatelessWidget {
                     AppsBox(
                       image: 'assets/icons/list.png',
                       scale: 1.5,
-                      title: "Transactions",
+                      title: "transactions".tr,
                       onPressed: () {
                         Get.toNamed('/history');
                       },
@@ -47,7 +48,7 @@ class AppsScreen extends StatelessWidget {
                     AppsBox(
                       image: 'assets/icons/bills.png',
                       scale: 1.3,
-                      title: "Pay Bills",
+                      title: "pay_bills".tr,
                     ),
                   ],
                 ),
@@ -57,12 +58,12 @@ class AppsScreen extends StatelessWidget {
                     AppsBox(
                       image: 'assets/icons/mycards.png',
                       scale: 1.2,
-                      title: "My Cards",
+                      title: "my_cards".tr,
                     ),
                     AppsBox(
                       image: 'assets/icons/offers.png',
                       scale: 1.2,
-                      title: "Offers",
+                      title: "offers".tr,
                     ),
                   ],
                 ),
