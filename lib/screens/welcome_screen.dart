@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/welcome_widget.dart';
@@ -41,17 +42,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       children: [
                         WelcomeWidget(
                           text:
-                              'Organize, find, and enjoy your\nloyalty cards in a more modern\nand dynamic way',
+                              'welcome1'.tr(),
                           image: 'assets/icons/Icon1.png',
                         ),
                         WelcomeWidget(
                           text:
-                              'Your money, your control smart\nbank with lower fees!',
+                              'welcome2'.tr(),
                           image: 'assets/icons/Icon2.png',
                         ),
                         WelcomeWidget(
                           text:
-                              'Lock it down, bank with confidence\n Your security, our commitment.',
+                              'welcome3'.tr(),
                           image: 'assets/icons/Icon3.png',
                         ),
                       ],
@@ -75,7 +76,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                       child: Center(
                         child: CustomText(
-                          text: 'SIGN UP',
+                          text: 'sign_up'.tr(),
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -95,7 +96,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                       child: Center(
                         child: CustomText(
-                          text: 'LOGIN',
+                          text: 'log_in'.tr(),
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
