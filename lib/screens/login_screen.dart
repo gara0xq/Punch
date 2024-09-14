@@ -138,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       );
                       userId = authController.loginResponse.data.userAccountId;
                       prefsController.setUser(userId!);
-                      Get.offAllNamed('/home');
+                      Get.offAllNamed('/controller');
                     }
                   },
                 )

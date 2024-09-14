@@ -5,7 +5,6 @@ import 'package:punch/controller/prefs_controller.dart';
 import 'package:punch/locale/my_locale.dart';
 import 'package:punch/screens/controller_screen.dart';
 import 'package:punch/screens/history_screen.dart';
-import 'package:punch/screens/home_screen.dart';
 import 'package:punch/screens/login_screen.dart';
 import 'package:punch/screens/signup_screen.dart';
 import 'package:punch/screens/splash_screen.dart';
@@ -32,11 +31,13 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       getPages: [
         GetPage(name: '/', page: () => const SplashScreen()),
-        GetPage(name: '/controller', page: () => ControllerScreen()),
+        GetPage(
+            name: '/controller',
+            page: () => ControllerScreen(),
+            binding: Binding()),
         GetPage(name: '/welcome', page: () => const WelcomeScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
         GetPage(name: '/register', page: () => SignupScreen()),
-        GetPage(name: '/home', page: () => HomeScreen()),
         GetPage(name: '/history', page: () => HistoryScreen()),
         GetPage(name: '/transfer_request', page: () => TransferRequestScreen()),
       ],
