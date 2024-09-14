@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:punch/controller/home_controller.dart';
+import 'package:punch/locale/local_controller.dart';
+import 'package:punch/utils/colors.dart';
 import 'package:punch/widgets/custom_text.dart';
+import 'package:punch/widgets/lang_buttom.dart';
+import 'package:punch/widgets/logout_button.dart';
 import 'package:punch/widgets/sidebar_button.dart';
 
-class SideBar extends StatelessWidget {
-  const SideBar({super.key});
+class SideBar extends StatefulWidget {
+  SideBar({super.key});
+
+  @override
+  State<SideBar> createState() => _SideBarState();
+}
+
+class _SideBarState extends State<SideBar> {
+  int _tabSelectedIndexSelected = 0;
+
+  LocalController localController = Get.put(LocalController());
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +90,31 @@ class SideBar extends StatelessWidget {
                   onTap: () {
                     Get.toNamed('/transfer_request');
                   },
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                LangButton(),
+                SizedBox(
+                  height: 100,
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 15),
+                  alignment: Alignment.bottomLeft,
+                  child: ElevatedButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.logout,
+                          color: Colors.white), // Logout icon
+                      label: Text('Logout',
+                          style: TextStyle(color: Colors.white)), // Label
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            Colors.grey.shade900, // Button background color
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(10), // Rounded corners
+                        ),
+                      )),
                 ),
               ],
             );

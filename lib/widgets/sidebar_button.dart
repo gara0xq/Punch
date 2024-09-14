@@ -27,35 +27,5 @@ class SidebarButton extends StatelessWidget {
         titleAlignment: ListTileTitleAlignment.center,
       ),
     );
-    // Container(
-    //   margin: EdgeInsets.only(top: 15),
-    //   height: 50,
-    //   width: 300,
-    //   decoration: BoxDecoration(
-    //     color: Color(0xfff4f4f4),
-    //   ),
-    //   child: TextButton(
-    //     onPressed: () {},
-    //     style: TextButton.styleFrom(
-    //       foregroundColor: Colors.black,
-    //       padding: EdgeInsets.zero,
-    //     ),
-    //     child: Row(
-    //       children: [
-    //         SizedBox(
-    //           width: 5,
-    //         ),
-    //         Icon(icon, size: 30, color: Colors.black),
-    //         SizedBox(
-    //           width: 95,
-    //         ),
-    //         Text(
-    //           title,
-    //           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 }
