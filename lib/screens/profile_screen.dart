@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:punch/controller/home_controller.dart';
 import 'package:punch/widgets/delete_account_button.dart';
-import 'package:punch/widgets/logout_button.dart';
 import 'package:punch/widgets/profile_details_box.dart';
+import 'package:punch/widgets/logout_button.dart';
 
 class ProfileScreen extends GetWidget<HomeController> {
   const ProfileScreen({super.key});
