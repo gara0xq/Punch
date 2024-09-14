@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       initialBinding: Binding(),
       initialRoute: "/",
       getPages: [
-        GetPage(name: '/', page: () => const SplashScreen()),
+        GetPage(name: '/', page: () =>  ControllerScreen ()),
         GetPage(name: '/controller', page: () => ControllerScreen()),
         GetPage(name: '/welcome', page: () => const WelcomeScreen()),
         GetPage(name: '/login', page: () => const LoginScreen()),
