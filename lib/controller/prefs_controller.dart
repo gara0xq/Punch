@@ -22,4 +22,8 @@ class PrefsController extends GetxController {
     final user = prefs.getString("user_id");
     return user;
   }
+
+  deleteUser() {
+    prefs.remove("user_id");
+  }
 }

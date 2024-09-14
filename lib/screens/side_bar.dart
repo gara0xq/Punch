@@ -18,8 +18,6 @@ class SideBar extends StatefulWidget {
 class _SideBarState extends State<SideBar> {
   int _tabSelectedIndexSelected = 0;
 
-  LocalController localController = Get.put(LocalController());
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -101,20 +99,7 @@ class _SideBarState extends State<SideBar> {
                 Container(
                   margin: EdgeInsets.only(left: 15),
                   alignment: Alignment.bottomLeft,
-                  child: ElevatedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.logout,
-                          color: Colors.white), // Logout icon
-                      label: Text('Logout',
-                          style: TextStyle(color: Colors.white)), // Label
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Colors.grey.shade900, // Button background color
-                        shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(10), // Rounded corners
-                        ),
-                      )),
+                  child: LogoutButton(),
                 ),
               ],
             );

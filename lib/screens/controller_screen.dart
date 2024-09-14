@@ -15,7 +15,8 @@ class ControllerScreen extends StatelessWidget {
         builder: (conteoller) {
           return Scaffold(
             body: conteoller.getPage(),
-            bottomNavigationBar: SizedBox(
+            bottomNavigationBar: Container(
+              color: Colors.white,
               height: 75,
               child: Stack(
                 children: [

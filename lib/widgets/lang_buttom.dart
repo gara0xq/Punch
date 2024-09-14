@@ -13,7 +13,7 @@ class LangButton extends StatefulWidget {
 
 class langButton extends State<LangButton> {
   int _tabSelectedIndexSelected = 0;
-  LocalController localController = Get.put(LocalController());
+  LocaleController localController = Get.put(LocaleController());
 
   @override
   Widget build(BuildContext context) {
