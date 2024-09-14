@@ -1,17 +1,18 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'package:get/get.dart';
 
 class MyLocale implements Translations {
+  static Map<String, String> arTranslation = {};
+  static Map<String, String> enTranslation = {};
   @override
   // TODO: implement keys
   Map<String, Map<String, String>> get keys => {
-        "gr": arTranslation,
+        "ar": arTranslation,
         "en": enTranslation,
       };
-  static late Map<String, String> arTranslation;
-  static late Map<String, String> enTranslation;
 
   static Future<void> loadTranslations() async {
     final arJson = await rootBundle.loadString("assets/translations/ar.json");

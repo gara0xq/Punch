@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:punch/controller/bottom_nav_controller.dart';
 import 'package:punch/controller/home_controller.dart';
 import 'package:punch/locale/local_controller.dart';
 import 'package:punch/utils/colors.dart';
@@ -17,6 +18,7 @@ class SideBar extends StatefulWidget {
 
 class _SideBarState extends State<SideBar> {
   int _tabSelectedIndexSelected = 0;
+  BottomNavController bottomNavController = Get.put(BottomNavController());
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +74,8 @@ class _SideBarState extends State<SideBar> {
                   title: "Profile",
                   icon: Icons.person,
                   onTap: () {
-                    Get.toNamed('/controller');
+                    bottomNavController.changeIndex(2);
+                    Get.back();
                   },
                 ),
                 SidebarButton(

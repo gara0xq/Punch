@@ -19,8 +19,10 @@ class HomeScreen extends GetWidget<HomeController> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double boxDimantion = width / 3 - 40;
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
-      appBar: AppBar(),
+      key: _scaffoldKey,
       drawer: SideBar(),
       backgroundColor: Colors.white,
       body: Stack(
@@ -230,6 +232,22 @@ class HomeScreen extends GetWidget<HomeController> {
                     );
             },
           ),
+          GestureDetector(
+            onTap: () {
+              return _scaffoldKey.currentState!.openDrawer();
+            },
+            child: Container(
+              margin: EdgeInsets.only(top: 30, left: 20),
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  color: blue, borderRadius: BorderRadius.circular(10)),
+              child: Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
+            ),
+          )
         ],
       ),
     );

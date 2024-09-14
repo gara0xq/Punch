@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:punch/widgets/custom_text.dart';
 
+// ignore: must_be_immutable
 class SidebarButton extends StatelessWidget {
   String title;
   IconData icon;

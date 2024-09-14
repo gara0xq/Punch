@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:punch/binding.dart';
 import 'package:punch/controller/prefs_controller.dart';
+import 'package:punch/locale/my_locale.dart';
 import 'package:punch/screens/controller_screen.dart';
 import 'package:punch/screens/history_screen.dart';
 import 'package:punch/screens/login_screen.dart';
@@ -12,7 +13,9 @@ import 'package:punch/screens/welcome_screen.dart';
 
 PrefsController entryController = PrefsController();
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await MyLocale.loadTranslations();
   runApp(const MyApp());
 }
 
@@ -25,6 +28,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
+      translations: MyLocale(),
+      locale: Locale('en'),
       initialRoute: "/",
       getPages: [
         GetPage(name: '/', page: () => const SplashScreen()),
