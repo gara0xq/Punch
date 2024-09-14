@@ -40,5 +40,11 @@
     "may" : "May",
     "income" : "Income",
     "outcome" : "Outcome",
-    "offers" : "Offers"
+    "offers" : "Offers",
+    "account_number" : "Account Number",
+    "delete_account" : "Delete Account",
+    "logout" : "Logout",
+    "EN" : "EN",
+    "AR" : "AR"
+
 }

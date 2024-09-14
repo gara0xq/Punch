@@ -7,6 +7,7 @@ import 'package:punch/widgets/card_box.dart';
 import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/fast_action_button.dart';
 import 'package:punch/widgets/transaction_item.dart';
+import 'side_bar.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends GetWidget<HomeController> {
@@ -18,28 +19,15 @@ class HomeScreen extends GetWidget<HomeController> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double boxDimantion = width / 3 - 40;
+    final GlobalKey<ScaffoldState> _scaffoldKey =
+        new GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: SideBar(),
       backgroundColor: Colors.white,
       body: Stack(
         children: [
           Image.asset("assets/images/main_bg.png"),
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              margin: EdgeInsets.only(top: 25, left: 15),
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: blue,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Icon(
-                Icons.menu,
-                color: Colors.white,
-                size: 30,
-              ),
-            ),
-          ),
           GetBuilder<HomeController>(
             init: HomeController(),
             builder: (controller) {
@@ -107,6 +95,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                 ),
                               ],
                             ),
+                            //d
                             const SizedBox(height: 20),
                             Container(
                               width: width,
@@ -243,6 +232,22 @@ class HomeScreen extends GetWidget<HomeController> {
                     );
             },
           ),
+          GestureDetector(
+            onTap: () {
+              return _scaffoldKey.currentState!.openDrawer();
+            },
+            child: Container(
+              margin: EdgeInsets.only(top: 30, left: 20),
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  color: blue, borderRadius: BorderRadius.circular(10)),
+              child: Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
+            ),
+          )
         ],
       ),
     );

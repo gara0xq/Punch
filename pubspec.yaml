@@ -39,6 +39,8 @@ dependencies:
   shared_preferences: ^2.3.2
   http: ^1.2.2
   get: ^4.6.6
+  toggle_switch: ^2.3.0
+  flutter_toggle_tab: ^1.4.1
 
 dev_dependencies:
   flutter_test:

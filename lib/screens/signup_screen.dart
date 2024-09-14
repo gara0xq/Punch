@@ -126,7 +126,7 @@ class SignupScreen extends StatelessWidget {
                         userId =
                             authController.signupResponse.data.userAccountId;
                         entryController.setUser(userId!);
-                        Get.offAllNamed('/home');
+                        Get.offAllNamed('/controller');
                       }
                     },
                   ),
