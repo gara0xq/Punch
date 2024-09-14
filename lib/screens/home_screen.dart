@@ -20,27 +20,12 @@ class HomeScreen extends GetWidget<HomeController> {
     double width = MediaQuery.of(context).size.width;
     double boxDimantion = width / 3 - 40;
     return Scaffold(
+      appBar: AppBar(),
+      drawer: SideBar(),
       backgroundColor: Colors.white,
       body: Stack(
         children: [
           Image.asset("assets/images/main_bg.png"),
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              margin: EdgeInsets.only(top: 25, left: 15),
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: blue,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Icon(
-                Icons.menu,
-                color: Colors.white,
-                size: 30,
-              ),
-            ),
-          ),
           GetBuilder<HomeController>(
             init: HomeController(),
             builder: (controller) {
