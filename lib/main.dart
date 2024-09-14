@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:punch/binding.dart';
 import 'package:punch/controller/prefs_controller.dart';
-import 'package:punch/locale/my_locale.dart';
 import 'package:punch/screens/controller_screen.dart';
 import 'package:punch/screens/history_screen.dart';
 import 'package:punch/screens/home_screen.dart';
@@ -14,19 +13,17 @@ import 'package:punch/screens/welcome_screen.dart';
 
 PrefsController entryController = PrefsController();
 
-void main() async {
-  runApp(MyApp());
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  //eeeeeeaaaa
+  //1
   @override
   Widget build(BuildContext context) {
     entryController.loadPreferences();
     return GetMaterialApp(
-      locale: Get.deviceLocale,
-      translations: MyLocale(),
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
       initialRoute: "/",

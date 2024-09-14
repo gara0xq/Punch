@@ -1,6 +1,8 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:punch/controller/history_controller.dart';
 import 'package:punch/controller/home_controller.dart';
 import 'package:punch/controller/user_payments.dart';
 import 'package:punch/utils/colors.dart';
@@ -8,10 +10,11 @@ import 'package:punch/widgets/custom_text.dart';
 import 'package:punch/widgets/sub_screens_background.dart';
 
 // ignore: must_be_immutable
-class HistoryScreen extends StatelessWidget {
+class HistoryScreen extends GetWidget<HistoryController> {
   HistoryScreen({super.key});
 
   HomeController _homeController = Get.put(HomeController());
+  final HistoryController historyController = Get.put(HistoryController());
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class HistoryScreen extends StatelessWidget {
       body: SubScreensBackground(
         child: GetBuilder<UserPaymentsController>(
             init: UserPaymentsController(),
-            builder: (controller) {
+            builder: (c) {
               return Container(
                 height: double.infinity,
                 width: double.infinity,
@@ -160,69 +163,80 @@ class HistoryScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 20),
-                    !controller.loading.value
+                    !c.loading.value
                         ? Center(
                             child: CircularProgressIndicator(),
                           )
                         : Expanded(
-                            child: ListView.builder(
-                              itemCount: controller.userPaymets.length,
-                              itemBuilder: (_, i) {
-                                String amount =
-                                    controller.userPaymets[i].paymentAmount;
+                            child: Obx(
+                              () => ListView.builder(
+                                controller: historyController.scrollController,
+                                itemCount: historyController
+                                            .itemsToDisplay.value >
+                                        c.userPaymets.length
+                                    ? c.userPaymets.length
+                                    : historyController.itemsToDisplay
+                                        .value, // Show only the itemsToDisplay number
+                                itemBuilder: (_, i) {
+                                  log(c.userPaymets.length.toString());
 
-                                String receiverAccountNumber = controller
-                                    .userPaymets[i].receiverAccountNumber;
+                                  String amount =
+                                      c.userPaymets[i].paymentAmount;
 
-                                String receiverAccountName = _homeController
-                                    .fetchUserData(receiverAccountNumber)
-                                    .username;
+                                  String receiverAccountNumber =
+                                      c.userPaymets[i].receiverAccountNumber;
 
-                                return Container(
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: 10, horizontal: 10),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.grey,
-                                          offset: Offset(0, 1),
-                                          blurRadius: 10,
-                                        )
-                                      ]),
-                                  child: ListTile(
-                                    leading: Container(
-                                      width: 50,
-                                      height: 50,
-                                      decoration: BoxDecoration(
-                                        color: blue,
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      child: Center(
-                                        child: CustomText(
-                                          text: receiverAccountName[0],
-                                          fontSize: 26,
+                                  String receiverAccountName = _homeController
+                                      .fetchUserData(receiverAccountNumber)
+                                      .username;
+
+                                  return Container(
+                                    margin: EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 10),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        color: Colors.white,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey,
+                                            offset: Offset(0, 1),
+                                            blurRadius: 10,
+                                          )
+                                        ]),
+                                    child: ListTile(
+                                      leading: Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                          color: blue,
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                        child: Center(
+                                          child: CustomText(
+                                            text: receiverAccountName[0],
+                                            fontSize: 26,
+                                          ),
                                         ),
                                       ),
+                                      subtitle: CustomText(
+                                        text: amount,
+                                        color: Colors.black,
+                                      ),
+                                      title: CustomText(
+                                        text: receiverAccountName,
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                      ),
+                                      trailing: Image.asset(
+                                        'assets/icons/outArrow.png',
+                                        scale: 13,
+                                        color: Colors.black,
+                                      ),
                                     ),
-                                    subtitle: CustomText(
-                                      text: amount,
-                                      color: Colors.black,
-                                    ),
-                                    title: CustomText(
-                                      text: receiverAccountName,
-                                      color: Colors.black,
-                                      fontSize: 20,
-                                    ),
-                                    trailing: Image.asset(
-                                      'assets/icons/outArrow.png',
-                                      scale: 13,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                );
-                              },
+                                  );
+                                },
+                              ),
                             ),
                           ),
                   ],
