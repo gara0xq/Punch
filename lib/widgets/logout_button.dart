@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class LogoutButton extends StatelessWidget {
   LogoutButton({super.key});
@@ -17,8 +18,8 @@ class LogoutButton extends StatelessWidget {
         color: Colors.white,
         size: 24,
       ),
-      label: const Text(
-        'Logout',
+      label: Text(
+        'logout'.tr,
         style: TextStyle(color: Colors.white),
       ),
     );

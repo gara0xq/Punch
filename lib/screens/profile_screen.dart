@@ -48,7 +48,7 @@ class ProfileScreen extends GetWidget<HomeController> {
                 const SizedBox(height: 10),
                 Text(
                   //1
-                  'Ali Ahmed',
+                  "Ali Ahmed",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -56,27 +56,27 @@ class ProfileScreen extends GetWidget<HomeController> {
                 ),
                 SizedBox(height: 30),
                 ProfileDetailsBox(
-                  title: "Account Number",
+                  title: "account_number".tr,
                   //2
                   value: "100000032",
                 ),
                 ProfileDetailsBox(
-                  title: "Username",
+                  title: "username".tr,
                   //3
                   value: "aliahmed1",
                 ),
                 ProfileDetailsBox(
-                  title: "Email",
+                  title: "email".tr,
                   //4
                   value: "garaxq@gmail.com",
                 ),
                 ProfileDetailsBox(
-                  title: "First Name",
+                  title: "first_name".tr,
                   //5
                   value: "Ali",
                 ),
                 ProfileDetailsBox(
-                  title: "Lase Name",
+                  title: "last_name".tr,
                   //6
                   value: "Ahmed",
                 ),

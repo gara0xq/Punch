@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 // ignore: must_be_immutable
 class LangButton extends StatelessWidget {
-  List<String> langList = ["EN", "AR"];
+  List<String> langList = ["EN".tr, "AR".tr];
   int _tabSelectedIndexSelected = 0;
   LocaleController localController = Get.put(LocaleController());
 

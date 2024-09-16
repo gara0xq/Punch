@@ -71,7 +71,7 @@ class _SideBarState extends State<SideBar> {
                   height: 70,
                 ),
                 SidebarButton(
-                  title: "Profile",
+                  title: "profile".tr,
                   icon: Icons.person,
                   onTap: () {
                     bottomNavController.changeIndex(2);
@@ -79,14 +79,14 @@ class _SideBarState extends State<SideBar> {
                   },
                 ),
                 SidebarButton(
-                  title: "Transactions",
+                  title: "transactions".tr,
                   icon: Icons.menu,
                   onTap: () {
                     Get.toNamed('/history');
                   },
                 ),
                 SidebarButton(
-                  title: "Tranfer",
+                  title: "transfer".tr,
                   icon: Icons.sync_alt_outlined,
                   onTap: () {
                     Get.toNamed('/transfer_request');

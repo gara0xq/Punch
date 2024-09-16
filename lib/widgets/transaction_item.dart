@@ -43,7 +43,7 @@ class TransactionItem extends StatelessWidget {
                 Text(
                   status,
                   style: TextStyle(
-                    color: status == 'Completed' ? Colors.green : Colors.red,
+                    color: (status == 'Completed' || status == 'مكتمل') ? Colors.green : Colors.red,
                   ),
                 ),
               ],
