@@ -58,27 +58,27 @@ class ProfileScreen extends GetWidget<HomeController> {
                 ProfileDetailsBox(
                   title: "account_number".tr,
                   //2
-                  value: "100000032",
+                  value: controller.CurrentUserModel.userAccountId,
                 ),
                 ProfileDetailsBox(
                   title: "username".tr,
                   //3
-                  value: "aliahmed1",
+                  value: controller.CurrentUserModel.username,
                 ),
                 ProfileDetailsBox(
                   title: "email".tr,
                   //4
-                  value: "garaxq@gmail.com",
+                  value: controller.CurrentUserModel.email,
                 ),
                 ProfileDetailsBox(
                   title: "first_name".tr,
                   //5
-                  value: "Ali",
+                  value: controller.CurrentUserModel.firstName,
                 ),
                 ProfileDetailsBox(
                   title: "last_name".tr,
                   //6
-                  value: "Ahmed",
+                  value: controller.CurrentUserModel.lastName,
                 ),
                 SizedBox(height: 20),
                 Row(

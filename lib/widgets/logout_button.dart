@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:punch/controller/prefs_controller.dart';
 
 class LogoutButton extends StatelessWidget {
   LogoutButton({super.key});
+  final prefsController = Get.find<PrefsController>();
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      onPressed: () {},
+      onPressed: () {
+        prefsController.deleteUser();
+        Get.offAllNamed('/login');
+      },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.black,
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),

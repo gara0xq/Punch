@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:get/get.dart';
+import 'package:punch/controller/prefs_controller.dart';
 import 'package:punch/model/request/login_req_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:punch/model/request/signup_req_model.dart';
@@ -12,6 +13,8 @@ import 'package:punch/utils/api.dart';
 class AuthController extends GetxController {
   late LoginResModel loginResponse;
   late SignupResModel signupResponse;
+
+  final prefsController = Get.find<PrefsController>();
 
   Future<bool> loginController(LoginReqModel loginModel) async {
     final response = await http.post(
@@ -46,6 +49,12 @@ class AuthController extends GetxController {
       return true;
     }
     return false;
+  }
+
+  Future<void> deletAccount() async {
+    final response = await http
+        .delete(Uri.parse(deleteUserUrl + prefsController.getUser()!));
+    log(response.body.toString());
   }
 
   isEmptyValidation(String value) {
