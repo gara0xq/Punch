@@ -1,16 +1,28 @@
-# punch
+# Punch
+###### Punch is a modern banking app built with Flutter, offering a secure, efficient, and user-friendly platform for managing finances. It enables users to perform transactions, track their spending, and manage accounts seamlessly.
 
-A new Flutter project.
+## Features
+##### Account Overview: View balances and transaction history for all accounts.
+##### Fund Transfers: Transfer money securely between accounts or to other users.
+##### Expense Tracking: Monitor spending with categorized transactions.
+##### Bill Payments: Pay utility bills and other recurring payments directly through the app.
+##### Secure Authentication: Log in with biometrics, PIN, or password.
+##### Notifications: Receive real-time updates on transactions and account activity.
+##### Multi-Currency Support: Manage accounts in different currencies.
 
-## Getting Started
+## Screenshots
+![1](https://github.com/user-attachments/assets/8af30806-14e2-4a82-82f3-8eb9ffe07f1d)
+![2](https://github.com/user-attachments/assets/e4984185-5149-4d68-a96b-53f4b67bbcc2)
+![3](https://github.com/user-attachments/assets/f0cdfdec-9cc4-44e7-b0c4-e967c662f1dc)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
+##### Framework: Flutter
+##### State Management: GetX
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Plugins:
+##### http: For handling API requests.
+##### shared_preferences: To store user settings locally.
+##### get: For state management and dependency injection.
+##### smooth_page_indicator: For PageView indicator.
+##### toggle_switch: For language chnage button.
