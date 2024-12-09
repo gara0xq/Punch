@@ -11,10 +11,9 @@
 ##### Multi-Currency Support: Manage accounts in different currencies.
 
 ## Screenshots
-![1](https://github.com/user-attachments/assets/8af30806-14e2-4a82-82f3-8eb9ffe07f1d)
-![2](https://github.com/user-attachments/assets/e4984185-5149-4d68-a96b-53f4b67bbcc2)
-![3](https://github.com/user-attachments/assets/f0cdfdec-9cc4-44e7-b0c4-e967c662f1dc)
-
+<img src="https://github.com/user-attachments/assets/8af30806-14e2-4a82-82f3-8eb9ffe07f1d" alt="description" width="300"/>
+<img src="https://github.com/user-attachments/assets/e4984185-5149-4d68-a96b-53f4b67bbcc2" alt="description" width="300"/>
+<img src="https://github.com/user-attachments/assets/f0cdfdec-9cc4-44e7-b0c4-e967c662f1dc" alt="description" width="300"/>
 
 ## Tech Stack
 ##### Framework: Flutter
